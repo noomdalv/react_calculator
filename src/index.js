@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const Hello = () => <h1>Hello World, Milestone 1 complete</h1>;
+import App from './components/App';
 
 ReactDOM.render(
-  <Hello />,
+  <App />,
   document.getElementById('root'),
 );
