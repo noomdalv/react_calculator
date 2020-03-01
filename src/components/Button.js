@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ name, color, wide }) => {  
+const Button = ({ name, color, wide }) => {
   const width = wide ? '50%' : '25%';
   const fontSize = color === 'orange' ? 42 : 34;
 

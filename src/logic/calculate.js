@@ -9,13 +9,13 @@ const calculate = (calculatorData, buttonName) => {
       next = '';
       operation = null;
       break;
-		case ('1'): case ('2'): case ('3'): case ('4'): case ('5'): case ('6'): case ('7'): case ('8'): case ('9'): case ('0'):
-			if (!next && !operation) {
-				total += buttonName;
-			} else {
-				next += buttonName;
-			}
-			break;
+    case ('1'): case ('2'): case ('3'): case ('4'): case ('5'): case ('6'): case ('7'): case ('8'): case ('9'): case ('0'):
+      if (!next && !operation) {
+        total += buttonName;
+      } else {
+        next += buttonName;
+      }
+      break;
     case ('+/-'):
       if (next) {
         next *= (-1);
@@ -31,18 +31,20 @@ const calculate = (calculatorData, buttonName) => {
       }
       break;
     case ('÷'): case ('x'): case ('-'): case ('+'): case ('%'):
-			operation = buttonName;
+      operation = buttonName;
       break;
     case ('='):
       if (next) {
         total = operate(total, next, operation);
         next = '';
-				operation: null;
+        operation = null;
       }
       break;
     default:
-      break;
+      return total;
   }
 
   return calculatorData;
 };
+
+export default calculate;
