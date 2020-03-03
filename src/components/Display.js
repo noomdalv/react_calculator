@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Display = props => {
-  const { result } = props;
-
-  return (
-    <div id="display">{result}</div>
-  );
-};
+const Display = ({ result }) => (
+  <div id="display">{result}</div>
+);
 
 Display.propTypes = {
   result: PropTypes.string,
