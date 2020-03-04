@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import operate from './operate';
 
 const calculate = ({ total, next, operation }, buttonName) => {
