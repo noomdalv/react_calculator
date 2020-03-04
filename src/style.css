@@ -6,9 +6,10 @@ body * {
 
 #app {
 	width: 700px;
-	margin: 50px auto;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
+	text-align: center;
 }
 
 #display {
