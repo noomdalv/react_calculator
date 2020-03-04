@@ -1,7 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate'; // eslint-disable-line no-unused-vars
+import calculate from '../logic/calculate';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,23 +11,23 @@ class App extends React.Component {
       next: null,
       operation: null,
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(buttonName) {
-    const data = calculate(this.state, buttonName);
-
-    this.setState({
+  handleClick(button) {
+    const data = calculate(this.state, button.name);
+    this.setState(() => ({
       total: data.total,
       next: data.next,
       operation: data.operation,
-    });
+    }));
   }
 
   render() {
     return (
       <div id="app">
-        <Display result={this.state.total} />
-        <ButtonPanel clickHandler={handleClick} />
+        <Display result={this.state} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
