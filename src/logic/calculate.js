@@ -1,25 +1,24 @@
+/*eslint-disable*/
 import operate from './operate';
 
-const calculate = (calculatorData, buttonName) => {
-  let { total, next, operation } = calculatorData;
-
+const calculate = ({ total, next, operation }, buttonName) => {
   switch (buttonName) {
     case ('AC'):
-      total = '';
-      next = '';
+      total = null;
+      next = null;
       operation = null;
       break;
     case ('1'): case ('2'): case ('3'): case ('4'): case ('5'): case ('6'): case ('7'): case ('8'): case ('9'): case ('0'):
       if (!next && !operation) {
-        total += buttonName;
+        total === null ? total = buttonName : total += buttonName;
       } else {
-        next += buttonName;
+				next === null ? next = buttonName : next += buttonName;
       }
       break;
     case ('+/-'):
       if (next) {
         next *= (-1);
-      } else {
+      } else if (total && !operation) {
         total *= (-1);
       }
       break;
@@ -31,12 +30,14 @@ const calculate = (calculatorData, buttonName) => {
       }
       break;
     case ('÷'): case ('x'): case ('-'): case ('+'): case ('%'):
-      operation = buttonName;
+      if (total) {
+        operation = buttonName;
+      }
       break;
     case ('='):
       if (next) {
         total = operate(total, next, operation);
-        next = '';
+        next = null;
         operation = null;
       }
       break;
@@ -44,7 +45,7 @@ const calculate = (calculatorData, buttonName) => {
       return total;
   }
 
-  return calculatorData;
+  return { total, next, operation };
 };
 
 export default calculate;

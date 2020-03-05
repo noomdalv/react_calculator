@@ -1,29 +1,37 @@
-import Big from 'big';
+/*eslint-disable*/
+import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
-  let total = Big(numberOne);
-  const next = Big(numberTwo);
+  const a = new Big(numberOne);
+  const b = new Big(numberTwo);
+  let result;
 
   switch (operation) {
     case ('÷'):
-      total /= next;
+			try {
+				result = a.div(b).toFixed(2).toString();
+			} catch(e) {				
+				alert("Division by zero error");
+				result = null
+			}
       break;
     case ('x'):
-      total *= next;
+      result = a.times(b).toString();
       break;
     case ('-'):
-      total -= next;
+      result = a.minus(b).toString();
       break;
     case ('+'):
-      total += next;
+      result = a.plus(b).toString();
       break;
     case ('%'):
-      total *= (next / 100);
+      result = a.times(b / 100).toString();
       break;
     default:
       break;
   }
-  return total;
+
+  return result;
 };
 
 export default operate;
