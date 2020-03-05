@@ -16,7 +16,7 @@
 [Live Demo Link](https://noomdalv-react-calculator.herokuapp.com/)
 
 <p align="center">
-  <img src="https://imgur.com/XgO5AVp">
+  <img src="https://i.imgur.com/XgO5AVp.jpg">
 </p>
 
 
