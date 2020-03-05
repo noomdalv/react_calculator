@@ -8,7 +8,12 @@ const operate = (numberOne, numberTwo, operation) => {
 
   switch (operation) {
     case ('÷'):
-      result = a.div(b).toFixed(2).toString();
+			try {
+				result = a.div(b).toFixed(2).toString();
+			} catch(e) {				
+				alert("Division by zero error");
+				result = null
+			}
       break;
     case ('x'):
       result = a.times(b).toString();

@@ -12,7 +12,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
       if (!next && !operation) {
         total === null ? total = buttonName : total += buttonName;
       } else {
-        next === null ? next = buttonName : next += buttonName;
+				next === null ? next = buttonName : next += buttonName;
       }
       break;
     case ('+/-'):
