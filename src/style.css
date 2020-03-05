@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Oxanium|Play&display=swap");
+
+body * {
+	font-family: 'Oxanium';
+}
+
+#app {
+	width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+#display {
+	height: 100px;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 25px;
+	color: white;
+	font-size: 80px;
+	background: gray;
+	border: solid black 2px;
+}
+
+#button-panel {
+	display: flex;
+	flex-direction: column;
+	border: solid black 2px;
+	border-top: none;
+}
+
+#button-panel div {
+	display: flex;
+	height: 100px;
+}
+
+button {
+	font-weight: bold;
+	border: solid black 1px;
+}
