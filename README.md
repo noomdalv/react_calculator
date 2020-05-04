@@ -38,7 +38,7 @@ git clone https://github.com/noomdalv/react_calculator.git
 
 - Github: [@noomdalv](https://github.com/noomdalv)
 - [Linkedin](https://www.linkedin.com/in/vladimir-luna-santos-14673614b/)
-
+- Email: vladlunasan@gmail.com
 
 ## Show your support
 
@@ -47,4 +47,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
